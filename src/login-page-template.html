@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    {{#login.title}}
+    <title>{{login.title}}</title>
+    {{/login.title}}
+    <meta name="viewport" content="width=device-width">
+    {{#login.favicon}}
+    <link rel="icon" href="{{login.favicon}}">
+    {{/login.favicon}}
+    <link rel="stylesheet" href="{{login.contextPath}}login-page.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    {{#login.background}}
+    <link rel="prefetch" href="{{&url}}">
+    {{/login.background}}
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js" ></script>
+    <script type="text/javascript" src="{{login.contextPath}}login-page.js" ></script>
+    <script type="text/javascript" src="{{login.contextPath}}i18n.js" ></script>
+  </head>
+
+<body>
+  <div id="formWrapper">
+    <form id="form">
+      <input type="hidden" id="path" value="{{login.contextPath}}">
+      <input type="hidden" id="authenticator" value="{{login.authenticationUrl}}">
+      <input type="hidden" id="callback" name="callback" value="{{login.entrypointUrl}}">
+      <div class="logo">
+        {{#login.organization.logo}}
+          <img src="{{login.organization.logo}}" alt="{{login.organization.name}}">
+        {{/login.organization.logo}}
+      </div>
+      <div class="alert-login">
+        <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+        <p data-i18n="login.authenticating"></p>
+      </div>
+      <div id="form-container">
+        <div class="form-item">
+          <p class="formLabel" data-i18n="login.username"></p>
+          <input type="text" name="username" id="username" class="form-style" autocapitalize="off" autocomplete="off" autofocus/>
+        </div>
+        <div class="form-item">
+          <p class="formLabel" data-i18n="login.password"></p>
+          <input type="password" name="password" id="password" class="form-style" />
+          {{#login.passwordRecoveryUrl}}
+            <p class="rup-pass"><a href="{{login.passwordRecoveryUrl}}" ><small data-i18n="login.passwordRecovery"></small></a></p>
+          {{/login.passwordRecoveryUrl}}
+          <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
+        </div>
+        <div class="alert" data-i18n="login.authenticationError"></div>
+        <div class="form-item">
+          <input type="submit" id="auth-button" class="login pull-right" value="Log In">    
+        </div>      
+        <!--<p class="pull-left"><a href="#"><small>Register</small></a></p> -->
+        <div id="other-login">
+          <ul>
+            {{#login.facebookUrl}}
+              <li><a href="{{login.facebookUrl}}" class="login facebook pull-right"><i class="fa fa-facebook" aria-hidden="true"></i> Log in with Facebook</a></li>
+            {{/login.facebookUrl}}
+            {{#login.googleplusUrl}}
+              <li><a href="{{login.googleplusUrl}}" class="login google pull-right"><i class="fa fa-google-plus" aria-hidden="true"></i> Sign in with Google</a></li>
+            {{/login.googleplusUrl}}
+            {{#login.citizencardUrl}}
+              <li><a  id="auth-cc-button" class="login cc pull-right"><span class="logo-cc"></span> <span>Log in with CC</span></a></li>
+            {{/login.citizencardUrl}}
+          </ul>  
+        </div>
+      </div>
+      <div class="clear-fix"></div>
+      <div class="footer">
+        {{#login.helpUrl}}
+        <p class="help"><a href="{{login.helpUrl}}" ><small><i class="fa fa-life-ring"></i></small> <small data-i18n="login.help">></small></a></p>
+        {{/login.helpUrl}} 
+        <p class="language"><a href="#" id="locale-toggler" ><small><i class="fa fa-globe"></i></small> <small data-i18n="login.langToggler"></small></a></p>		 
+      </div>  
+    </form>
+  </div>
+  <div class="hidden-data">
+    {{#login.background}}
+    <span>{{&url}}</span>
+    {{/login.background}}
+  </div>
+  <aside class="mark">
+    <a class="btn" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    <div class="container-mark">
+      <div class="intro">
+        <h1>Vestibulum ut erat</h1>
+        <p>Vestibulum ut erat eget lorem eleifend facilisis sit amet gravida lacus. Aliquam libero dolor, pretium vitae magna nec, vehicula eleifend nunc. Maecenas vulputate orci ut ligula vestibulum.</p>
+      </div>
+      <div class="separated"></div>
+      <div class="structure">
+        <div class="fenix-model">
+           <img class="fenix-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Xkkc_Logo.svg/2000px-Xkkc_Logo.svg.png">
+           <ul>
+             <li><a href="https://github.com/FenixEdu/bennu">Bennu Framework <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/fenix-framework/fenix-framework">Fenix Framework <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/FenixEdu/fenixedu-academic">FenixEdu Academic <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/FenixEdu/fenixedu-learning">FenixEdu Learning <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/FenixEdu/fenixedu-cms">FenixEdu CMS <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/qub-it/fenixedu-ulisboa-specifications">FenixEdu ULisboa specifications <i class="fa fa-github" aria-hidden="true"></i></a></li>
+           </ul>
+        </div>
+        <div class="separated"></div>
+        <div class="omnis-platform">
+          <img class="omnis-logo" src="https://omnis.qub-it.com/images/omnis-platform-black-v2.png">
+          <ul>
+             <li><a href="https://github.com/qub-it/fenixedu-treasury">FenixEdu Treasury <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/qub-it/fenixedu-academic-treasury">FenixEdu Academic Treasury <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="https://github.com/qub-it/fenixedu-qubdocs-reports">omnis reports <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="">omnis workflow <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="">omnis inquiries <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="">omnis auditing <i class="fa fa-github" aria-hidden="true"></i></a></li>
+             <li><a href="">omnis data <i class="fa fa-github" aria-hidden="true"></i></a></li>
+           </ul>
+        </div>
+      </div>
+      <div class="separated"></div>
+      <footer>
+        <p>Powered by <a href="">omnis platform</a>.</p>
+        <p>© 2106. qub-it. All rights reserved</p>
+      </footer>
+    </div>
+  </aside>
+</body>
+</html>

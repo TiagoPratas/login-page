@@ -1,0 +1,315 @@
+$primary-color: {{theme.primaryColor}};
+@import url(//www.portaldocidadao.pt/PortalAmaHome-theme/fonts/PortalCidadao.ttf);
+
+body{
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family:'HelveticaNeue','Arial', sans-serif;
+
+}
+a{color:#ccc;text-decoration: none;}
+a:hover{color:#34495E; }
+.pull-right{float: right;}
+.pull-left{float: left;}
+.clear-fix{clear:both;}
+div.logo{text-align: center;}
+.logo {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  img {
+    max-width: 320px;
+    max-height: 100px;
+    display: block;
+    margin: auto;
+  }
+}
+.logo-active{fill: #44aacc !important;}
+#formWrapper{
+	background: rgba(0,0,0,.2); 
+	width:100%; 
+	height:100%; 
+	position: absolute; 
+	top:0; 
+	left:0;
+	transition:all .3s ease;}
+.darken-bg{background: rgba(0,0,0,.5) !important; transition:all .3s ease;}
+
+form#form{
+	position: absolute;
+	width:320px;
+	height:auto;
+	background-color: #fff;
+	margin:auto;
+	border-radius: 5px;
+	padding:20px;
+	left:50%;
+	top:50%;
+	margin-left:-180px;
+	margin-top:-266px;
+}
+div.form-item{position: relative; display: block; margin-bottom: 20px;}
+input, a {transition: all .2s ease;}
+input.form-style {
+	color:#8a8a8a;
+	display: block;
+	width: 89%; /*este valor em produção é 100%*/
+	height: 36px; /*este valor em produção é 46px*/
+	padding: 5px 5%;
+	border:2px solid #ccc;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 105%;
+	letter-spacing: .8px;
+}
+div.form-item .form-style:focus{outline: none; border:2px solid $primary-color; color:$primary-color; }
+div.form-item p.formLabel {
+	position: absolute;
+	left:26px;
+	transition:all .4s ease;
+	color:#bbb;}
+.formTop{top:-22px !important; left:26px; background-color: #fff; padding:0 5px; font-size: 14px; color:$primary-color !important;}
+.formStatus{color:#8a8a8a !important;}
+input[type="submit"].login,
+a.login{
+	float:right;
+	width: 100%;
+	height:46px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: $primary-color;
+	border:none;
+	color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+input[type="submit"].login:hover,
+a.login:hover{background-color: rgba($primary-color, 0.85);  color:#fff; cursor:pointer;}
+input[type="submit"].login:focus,
+a.login:focus{outline: none;}
+
+.alert-login {
+  color: #ababab;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.alert {
+  color: #e31c1c;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  display: none;
+  text-align: center;
+  font-size: 13px;
+}
+
+#other-login {
+  ul {
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    width: 100%;
+    li {
+      min-width: 32%;
+      flex-grow: 1;
+      margin-right: 2%;
+      i {
+        margin-right: 3px;
+      }
+      .login {
+        font-size: 12px;
+        text-align: center;
+        line-height: 46px; 
+        font-weight: 600;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  a, input{
+    margin-bottom: 8px;
+    &:first-child{
+      margin-top: 22px;
+      display: block;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+a.login,
+input[type="submit"].login{
+  &.facebook {
+    background-color: #3b5998;
+  }
+  &.google {
+    background-color: #d34836;
+  }
+  &.cc {
+    background-color: #417EB7;
+    .logo-cc {
+      font-family: 'PortalCidadao';
+      font-size: 30px;
+      line-height: 25px;
+      vertical-align: middle;
+      &:before {
+        content: "\e605";
+      }
+    }
+  }
+} 
+
+
+a.login,
+input[type="submit"].login {
+  &.facebook:hover {
+    background-color: rgba(#3b5998,0.85); 
+    color: #fff;
+    cursor:pointer;
+  }
+  &.google:hover {
+    background-color: rgba(#d34836,0.85); 
+    color:#fff; 
+    cursor:pointer;
+  }
+  &.cc:hover {
+    background-color: rgba(#417EB7,0.85); 
+    color:#fff; 
+    cursor:pointer;
+  }
+}  
+
+.form-item .rup-pass {
+  margin-top: 5px;
+  display: block;
+}
+
+.footer {
+  margin-top: 16px;
+  a {
+    color:#ccc;
+    &:hover {
+      color:#34495E;
+    }
+  }
+  .help {
+    float: left;
+  }
+  .language {
+    float: right;
+  }
+}
+
+div.hidden-data {
+  display: none;
+}
+
+.mark {
+  margin-top: -8px;
+  position: fixed;
+  z-index: 2000;
+  right: 0;
+  height: 100%;
+  width: 400px;
+  right: -360px;
+  transition: right 800ms ease;
+  overflow-x: hidden;
+  .btn {
+    position: fixed;
+    margin-left: 1px;
+    background-color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #f4f4f4;
+    font-size: 30px;
+    text-align: center;
+
+    &:hover {
+      color:#34495E;
+    }
+  }
+  .container-mark {
+    padding: 40px 40px 15px;
+    width: 360px;
+    height: 100%;
+    margin-left: 40px;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    box-sizing: border-box;
+    h1 {
+      font-size: 20px;
+      color: #000000;
+      letter-spacing: 0px;
+      line-height: 27px;
+    }
+    p {
+      font-size: 14px;
+      color: #393939;
+      letter-spacing: 0px;
+      line-height: 23px;
+    }
+  }  
+
+  .separated {
+    border-top: 1px #ccc dashed;
+    margin-top: 40px;
+    margin-bottom: -6px;
+  }
+  .structure {
+    ul {
+      list-style: none;
+    padding-left: 0px;
+    font-size: 14px;
+    line-height: 23px;
+    text-decoration: underline;
+    li {
+      a {
+        color: #393939;
+        &:hover {
+          color: #8a8a8a;
+        }
+        }
+      }
+    }
+    .omnis-platform {
+      margin-top: 40px;
+      .omnis-logo {
+        width: 170px;
+        height: auto;
+      }
+    }
+    .fenix-model {
+      margin-top: 40px;
+      .fenix-logo {
+        width: 80px;
+        height: auto;
+      }
+    }
+  }
+
+  footer {
+    font-size: 12px;
+    text-align: center;
+    bottom: 5px;
+    margin-top: 40px;
+  }
+}
+
+.mark-show {
+  right: 0;
+}
